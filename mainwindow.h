@@ -27,6 +27,7 @@ private slots:
     void on_actionClear_clicked();
     void on_actionPercent_clicked();
     void on_actionSign_clicked();
+    void on_actionSqrt_clicked();  // New slot for square root operation
 
 private:
     Ui::MainWindow *ui;

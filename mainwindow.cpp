@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <cmath>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -187,6 +188,16 @@ void MainWindow::on_actionSign_clicked()
     displayLabel = QString::number(percentage,'g', DIGIT_LIMIT);
     //Set number back to display
     ui->displayPanel->setText(displayLabel);
+}
+
+void MainWindow::on_actionSqrt_clicked() {
+    double currentValue = ui->display->text().toDouble();
+    if (currentValue < 0) {
+        ui->display->setText("Error");
+    } else {
+        double result = std::sqrt(currentValue);
+        ui->display->setText(QString::number(result));
+    }
 }
 
 //==================================================================================
